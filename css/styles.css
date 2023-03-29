@@ -265,7 +265,7 @@ footer {
     height: 100vh;
     min-height: 500px;
     max-height: 1080px;
-    background: url(../images/tatry.jpeg);
+    background: url(../images/background2.jpeg);
     background-size: cover;
     padding: 15px;
     overflow: hidden
@@ -365,6 +365,20 @@ footer {
 }
 
 #about p {
+    color: #74808a;
+    margin: 0
+}
+
+#news {
+    padding: 75px 15px;
+    border-bottom: 1px solid #dcd9d9
+}
+
+#news h2 {
+    color: #374054
+}
+
+#news p {
     color: #74808a;
     margin: 0
 }
