@@ -537,6 +537,55 @@ footer {
     padding: 0 0 0 15px
 }
 
+#talks {
+    padding: 50px 15px 20px 15px;
+    border-bottom: 1px solid #dcd9d9;
+    text-align: center
+}
+
+#talks h2 {
+    color: #374054;
+    margin-bottom: 50px
+}
+
+.talks-block {
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+    padding: 15px;
+    border: 1px solid #dcd9d9;
+    text-align: left
+}
+
+.talks-block h3 {
+    font-weight: 500;
+    float: left;
+    margin: 0;
+    color: #374054
+}
+
+.talks-block span {
+    color: #74808a;
+    float: right
+}
+
+.talks-block h4 {
+    color: #74808a;
+    clear: both;
+    font-weight: 500;
+    margin: 0 0 15px 0
+}
+
+.talks-block p,
+.talks-block ul {
+    margin: 0;
+    color: #74808a;
+    font-size: 0.9em
+}
+
+.talks-block ul {
+    padding: 0 0 0 15px
+}
+
 #projects {
     padding: 50px 15px;
     border-bottom: 1px solid #dcd9d9;
@@ -847,6 +896,11 @@ footer {
 
     .education-block h3,
     .education-block span {
+        float: none
+    }
+
+    .talks-block h3,
+    .talks-block span {
         float: none
     }
 
