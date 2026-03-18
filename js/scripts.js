@@ -30,7 +30,7 @@
 
         $('html, body').animate({
             scrollTop: scrollDistance + 'px'
-        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 1);
+        }, Math.abs(window.pageYOffset - $(heading).offset().top) / 5);
 
         // Hide the menu once clicked if mobile
         if ($('header').hasClass('active')) {
@@ -88,6 +88,51 @@
     $('#mobile-menu-close').click(function() {
         $('header, body').removeClass('active');
     });
+
+    // News section: show only first 5 items, toggle the rest
+    (function() {
+        var $newsCol = $('#news .col-md-10');
+        var $items = $newsCol.children('p');
+        var $spacers = $newsCol.children('span');
+        var limit = 5;
+
+        if ($items.length > limit) {
+            $items.each(function(i) { if (i >= limit) $(this).hide(); });
+            $spacers.each(function(i) { if (i >= limit) $(this).hide(); });
+
+            var $toggle = $('<a href="#" id="toggle-news" class="no-scroll toggle-section"><i class="fa fa-chevron-down"></i>Show more</a>');
+            $newsCol.append($toggle);
+
+            $toggle.click(function(e) {
+                e.preventDefault();
+                var hidden = $items.eq(limit).is(':hidden');
+                $items.each(function(i) { if (i >= limit) $(this).toggle(hidden); });
+                $spacers.each(function(i) { if (i >= limit) $(this).toggle(hidden); });
+                $(this).html(hidden ? '<i class="fa fa-chevron-up"></i>Show less' : '<i class="fa fa-chevron-down"></i>Show more');
+            });
+        }
+    })();
+
+    // Generic show more/less for block sections
+    function initToggle(sectionId, blockClass, limit) {
+        var $section = $(sectionId);
+        var $blocks = $section.children('.' + blockClass);
+        if ($blocks.length <= limit) return;
+
+        $blocks.each(function(i) { if (i >= limit) $(this).hide(); });
+        var $toggle = $('<a href="#" class="no-scroll toggle-section"><i class="fa fa-chevron-down"></i>Show more</a>');
+        $section.append($toggle);
+
+        $toggle.click(function(e) {
+            e.preventDefault();
+            var hidden = $blocks.eq(limit).is(':hidden');
+            $blocks.each(function(i) { if (i >= limit) $(this).toggle(hidden); });
+            $(this).html(hidden ? '<i class="fa fa-chevron-up"></i>Show less' : '<i class="fa fa-chevron-down"></i>Show more');
+        });
+    }
+
+    initToggle('#publication', 'publication-block', 5);
+    initToggle('#talks', 'talks-block', 5);
 
     // Load additional projects
     $('#view-more-projects').click(function(e){

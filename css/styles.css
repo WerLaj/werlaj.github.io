@@ -15,6 +15,17 @@ body {
     font-size: 16px
 }
 
+body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 45px;
+    background: rgba(100, 95, 85, 0.92);
+    z-index: 998
+}
+
 body.active {
     overflow: hidden;
     z-index: -1
@@ -64,12 +75,12 @@ body.active {
 }
 
 header {
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     right: 0;
     text-align: center;
-    z-index: 10;
+    z-index: 999;
     animation-name: dropHeader;
     animation-iteration-count: 1;
     animation-timing-function: ease;
@@ -80,7 +91,7 @@ header ul {
     display: inline-block;
     background: #fff;
     text-align: center;
-    padding: 10px;
+    padding: 4px 6px;
     margin: 0;
     border-bottom-right-radius: 4px;
     border-bottom-left-radius: 4px
@@ -92,19 +103,20 @@ header li {
 
 header a {
     display: block;
-    color: #3498db;
-    padding: 10px
+    color: #8a8578;
+    padding: 5px 8px;
+    font-size: 1.05em
 }
 
 header a:hover {
-    color: #217dbb;
+    color: #6e6960;
     text-decoration: none;
     background: #eee;
     border-radius: 4px
 }
 
 header a:focus {
-    color: #3498db;
+    color: #8a8578;
     text-decoration: none
 }
 
@@ -127,7 +139,7 @@ header.sticky {
     position: fixed;
     right: 15px;
     top: 10px;
-    color: #3498db;
+    color: #8a8578;
     font-size: 1.5em;
     z-index: 20;
     padding: 0 7px;
@@ -144,7 +156,7 @@ header.sticky {
     padding-right: 15px;
     padding-top: 10px;
     cursor: pointer;
-    color: #3498db
+    color: #8a8578
 }
 
 #mobile-menu-close span {
@@ -210,7 +222,7 @@ footer {
 }
 
 .social a:hover {
-    color: #3498db
+    color: #8a8578
 }
 
 .btn-rounded-white {
@@ -223,7 +235,7 @@ footer {
 }
 
 .btn-rounded-white:hover {
-    color: #3498db;
+    color: #8a8578;
     background: #fff;
     text-decoration: none
 }
@@ -253,7 +265,7 @@ footer {
     left: 0;
     right: 0;
     margin: 0 auto;
-    background: #3498db
+    background: #8a8578
 }
 
 .background-alt {
@@ -288,16 +300,16 @@ footer {
 #lead-content h1 {
     color: #fff;
     font-weight: 900;
-    font-size: 5em;
+    font-size: 4.5em;
     text-transform: uppercase;
     letter-spacing: 0.05em;
     line-height: 0.9em
 }
 
 #lead-content h2 {
-    color: #a0cfee;
+    color: #c0b8a8;
     font-weight: 500;
-    font-size: 2.25em;
+    font-size: 2em;
     margin-bottom: 15px
 }
 
@@ -309,7 +321,7 @@ footer {
     right: 0;
     bottom: 0;
     left: 0;
-    background: rgba(33, 125, 187, 0.8);
+    background: linear-gradient(135deg, rgba(60, 55, 50, 0.82), rgba(120, 115, 100, 0.7));
     z-index: 1
 }
 
@@ -331,7 +343,7 @@ footer {
     width: 35px;
     height: 35px;
     border-radius: 50%;
-    border: 3px solid #a0cfee;
+    border: 3px solid #c0b8a8;
     text-align: center
 }
 
@@ -364,6 +376,15 @@ footer {
     color: #374054
 }
 
+.profile-photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-top: 20px;
+    border: 3px solid #dcd9d9
+}
+
 #about p {
     color: #74808a;
     margin: 0
@@ -381,6 +402,44 @@ footer {
 #news p {
     color: #74808a;
     margin: 0
+}
+
+#toggle-news {
+    display: block;
+    margin-top: 15px;
+    color: #8a8578;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: left
+}
+
+#toggle-news i {
+    margin-right: 6px;
+    text-decoration: none
+}
+
+#toggle-news:hover {
+    color: #6e6960;
+    text-decoration: underline
+}
+
+.toggle-section {
+    display: block;
+    margin-top: 15px;
+    color: #8a8578;
+    cursor: pointer;
+    font-weight: 500;
+    text-align: center
+}
+
+.toggle-section i {
+    margin-right: 6px;
+    text-decoration: none
+}
+
+.toggle-section:hover {
+    color: #6e6960;
+    text-decoration: underline
 }
 
 #experience {
@@ -408,7 +467,7 @@ footer {
     right: auto;
     height: 100%;
     width: 3px;
-    background: #3498db;
+    background: #8a8578;
     z-index: 0
 }
 
@@ -417,8 +476,8 @@ footer {
     content: '';
     width: 3px;
     height: 40px;
-    background: #3498db;
-    background: linear-gradient(to bottom, #3498db, rgba(52, 152, 219, 0));
+    background: #8a8578;
+    background: linear-gradient(to bottom, #8a8578, rgba(138, 133, 120, 0));
     top: 100%;
     left: 303px
 }
@@ -463,19 +522,19 @@ footer {
 .vtimeline-icon {
     position: relative;
     color: #fff;
-    width: 50px;
-    height: 50px;
-    background: #3498db;
+    width: 30px;
+    height: 30px;
+    background: #8a8578;
     border-radius: 50%;
     float: left;
     z-index: 99;
-    margin-left: 280px
+    margin-left: 290px
 }
 
 .vtimeline-icon i {
     display: block;
-    font-size: 2em;
-    margin-top: 10px
+    font-size: 1.2em;
+    margin-top: 6px
 }
 
 .vtimeline-date {
@@ -521,7 +580,13 @@ footer {
     margin: 0 auto 30px auto;
     padding: 15px;
     border: 1px solid #dcd9d9;
-    text-align: left
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease
+}
+
+.publication-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12)
 }
 
 .publication-block h3 {
@@ -570,7 +635,13 @@ footer {
     margin: 0 auto 30px auto;
     padding: 15px;
     border: 1px solid #dcd9d9;
-    text-align: left
+    text-align: left;
+    transition: transform 0.2s ease, box-shadow 0.2s ease
+}
+
+.talks-block:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12)
 }
 
 .talks-block h3 {
