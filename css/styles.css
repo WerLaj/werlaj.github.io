@@ -249,11 +249,45 @@ footer {
 }
 
 .heading {
-    position: relative;
+    position: sticky;
+    top: 45px;
     display: inline-block;
     font-size: 2em;
     font-weight: 300;
-    margin: 0 0 30px 0
+    margin: 0 0 30px 0;
+    z-index: 10;
+    padding: 0 0 2px 0
+}
+
+.heading::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: calc(100% + 20px);
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    z-index: -1;
+    pointer-events: none
+}
+
+#news .heading::before {
+    display: none
+}
+
+#news .heading {
+    position: relative;
+    top: auto
+}
+
+.background-alt .heading::before {
+    background: rgba(242, 242, 245, 0.85)
+}
+
+.background-alt .heading {
 }
 
 .heading:after {
@@ -945,6 +979,10 @@ footer {
 
     #about p {
         text-align: left
+    }
+
+    .profile-photo {
+        margin-bottom: 20px
     }
 }
 
