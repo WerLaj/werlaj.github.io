@@ -571,7 +571,7 @@ footer {
     background: #8a8578;
     border-radius: 50%;
     float: left;
-    z-index: 99;
+    z-index: 1;
     margin-left: 290px
 }
 
@@ -617,6 +617,30 @@ footer {
 #books h2 {
     color: #374054;
     margin-bottom: 50px
+}
+
+#service {
+    padding: 50px 15px 20px 15px;
+    border-bottom: 1px solid #dcd9d9;
+    text-align: center
+}
+
+#service h2 {
+    color: #374054;
+    margin-bottom: 50px
+}
+
+.service-list {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0 0 0 20px;
+    text-align: left;
+    color: #74808a;
+    font-size: 0.9em
+}
+
+.service-list li {
+    margin-bottom: 8px
 }
 
 .publication-block {
